@@ -8,19 +8,27 @@ import '../widgets/loading_indicator.dart';
 import '../widgets/like_button.dart';
 import '../widgets/dislike_button.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   final VoidCallback onToggleTheme;
   const MainScreen({super.key, required this.onToggleTheme});
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context),
       body: Consumer<CatController>(
         builder: (context, controller, _) {
-          if (controller.hasError)
+          if (controller.hasError) {
             return ErrorPlaceholder(onRetry: controller.reset);
-          if (controller.cats.isEmpty) return const LoadingIndicator();
+          }
+          if (controller.cats.isEmpty) {
+            return const LoadingIndicator();
+          }
           return Column(
             children: [
               Expanded(
@@ -57,7 +65,7 @@ class MainScreen extends StatelessWidget {
       actions: [
         IconButton(
           icon: const Icon(Icons.brightness_6),
-          onPressed: onToggleTheme,
+          onPressed: widget.onToggleTheme,
         ),
       ],
     );
