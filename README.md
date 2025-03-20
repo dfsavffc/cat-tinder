@@ -65,4 +65,4 @@ lib/
 
 
 ## Ссылка на скачивание APK
-[Скачать APK](https://drive.google.com/file/d/1D9Fy4TKjdX8UNXeKxvysyC2TPTz8TdK5/view?usp=drive_link)
+[Скачать APK](https://drive.google.com/file/d/14s_Kvzkvtjp2HzzYKwpFEHgl4wOcdBiI/view?usp=drive_link)
